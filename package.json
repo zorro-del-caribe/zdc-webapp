@@ -1,0 +1,30 @@
+{
+  "name": "zdc-webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^1.3.0",
+    "conf-load": "^1.0.3",
+    "got": "^6.3.0",
+    "koa": "^1.2.1",
+    "koa-bodyparser": "^2.2.0",
+    "koa-generic-session": "^1.11.3",
+    "koa-gzip": "^0.1.0",
+    "koa-pug": "^3.0.0-0",
+    "koa-router": "^5.4.0",
+    "superagent": "^2.1.0",
+    "bucanero":"https://github.com/zorro-del-caribe/bucanero",
+    "bucanero-router":"https://github.com/zorro-del-caribe/bucanero-router"
+  },
+  "devDependencies": {
+    "supertest": "^1.2.0",
+    "tape": "^4.6.0"
+  }
+}

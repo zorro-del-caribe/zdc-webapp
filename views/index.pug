@@ -1,0 +1,22 @@
+html
+    head
+        title hello world
+    body
+        main
+            p hello world
+            p
+                if(!user.email)
+                    a(href='/authentications/login') Login
+                if(user.email)
+                    a(href='/authentications/logout') Logout
+                    p hello #{user.email}
+                    p #{JSON.stringify(user)}
+            if(classifieds)
+                section
+                    h2 list
+                        ol
+                            each c in classifieds
+                                li
+                                    article
+                                        h2 #{c.title}
+                                        p #{c.content}
