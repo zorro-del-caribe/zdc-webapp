@@ -3,6 +3,9 @@ const bodyParser = require('koa-bodyparser');
 const Pug = require('koa-pug');
 const gzip = require('koa-gzip');
 const sessions = require('koa-generic-session');
+const koa = require('koa');
+const fileServer = require('koa-static');
+const mount = require('koa-mount');
 
 module.exports = {
   priority: 200,
@@ -28,6 +31,12 @@ module.exports = {
         yield *next;
       });
     }
+
+    if (process.env.NODE_ENV !== 'production') {
+      const fs = fileServer('./public/dist');
+      app.use(mount('/public', fs));
+    }
+
     return app;
   }
 };

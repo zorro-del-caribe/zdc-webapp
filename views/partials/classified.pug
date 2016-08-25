@@ -1,0 +1,8 @@
+mixin preview(classified)
+    article
+        header
+            h2
+                a(href='/classifieds/'+classified.id, rel='bookmark') #{classified.title}
+        p #{classified.content}
+        footer
+            #{classified.tags}

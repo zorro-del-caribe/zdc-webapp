@@ -5,8 +5,10 @@ const zdc = require('zdc')();
 app.start()
   .then(function () {
     app.use(function * () {
-      const {zdcToken} = this.app.context;
-      const classifieds = yield zdc.classifieds({token: zdcToken.access_token}).list();
-      this.render('index', {user: this.session && this.session.user || {}, classifieds});
+      if (this.path === '/') {
+        const {zdcToken} = this.app.context;
+        const classifieds = yield zdc.classifieds({token: zdcToken.access_token}).list();
+        this.render('index', {user: this.session && this.session.user || {}, classifieds});
+      }
     });
   });

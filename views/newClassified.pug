@@ -1,0 +1,17 @@
+extends layout/main
+
+block content
+    h1 New classified
+    form(method='POST',action='/classifieds/')
+        label
+            span Title
+            input(required=true,name='title', placeholder='ex: House for rent in La Habana')
+        label
+            span Content
+            textarea(required=true,name='content', placeholder='ex: a wonderful house on the beach near all commodities ...')
+        label
+            span
+                | Price ($)
+                small   - optional
+            input(type='number',name='price',placeholder='ex: 80',step='0.01')
+        button(type='submit') Create

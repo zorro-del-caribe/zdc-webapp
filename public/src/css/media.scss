@@ -1,0 +1,35 @@
+@media (max-width: 680px) {
+  body {
+    font-size: calc(1em + 1vw);
+  }
+
+  header[role='banner'] a {
+    padding: 0.4em;
+    flex-grow: 1
+  }
+
+  ul[role='menu']:target {
+    position: relative;
+  }
+
+  nav, [role='banner'], [role='menubar'] {
+    flex-direction: column;
+  }
+
+  nav{
+    width: 100%;
+  }
+
+  ul[role='menu'] {
+    border-width: 2px 0 0 0;
+    box-shadow: none;
+  }
+
+  label span {
+    flex-basis: 100%;
+  }
+
+  .previews-container > li {
+    flex-basis: 100%;
+  }
+}

@@ -1,0 +1,59 @@
+include ../widgets/menu
+
+header(role='banner')
+    nav
+        a#logo-anchor(href='/')
+            img(src="foo", alt="logo")
+        ul(role='menubar')
+            li.relative(role='menuitem')
+                a#country-select(href='#country-select-menu', role='button', aria-haspopup='true')
+                    span
+                        strong Country
+                        small  (Cuba)
+                    span(aria-hidden=true).caret
+                ul#country-select-menu(role='menu',aria-labelledby='country-select')
+                    +menuitem()
+                        a(href="") span Cuba
+                    +menuitem()
+                        a(href="") Jamaica
+                    +menuitem()
+                        a(href="") Puerto Rico
+                    +menuitem()
+                        a(href) +others
+            li.relative(role='menuitem')
+                a#language-select(href='#language-select-menu', role='button', aria-haspopup='true')
+                    strong Language
+                    small  (En)
+                ul#language-select-menu(role='menu',aria-labelledby='language-select')
+                    +menuitem()
+                        a(href="",rel='alternate',hreflang='en') English
+                    +menuitem()
+                        a(href="",rel='alternate',hreflang='sp') Spanish
+                    +menuitem()
+                        a(href="",rel='alternate',hreflang='fr') French
+        a(href='/classifieds/actions/new') New classified
+        if(!user.email)
+            a(href='/authentications/login') Login
+        else
+            div.relative
+                a#user-nav(href='#user-nav-menu', role='button', aria-haspopup='true') Me and ZDC
+                ul#user-nav-menu(role='menu',aria-labelledby='user-nav')
+                    +menuitem()
+                        a(href='#') My profile
+                    +menuitem()
+                        a(href='#') My messages
+                    +menuitem()
+                        a(href='#') My classifieds
+                    +menuitem()
+                        a(href='#') My Alerts
+                    li(role='separator')
+                    +menuitem()
+                        a(href='/authentications/logout') Logout
+    form
+        label Search
+        input(type='search')
+
+
+
+
+

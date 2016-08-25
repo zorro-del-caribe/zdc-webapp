@@ -1,0 +1,8 @@
+{
+  "use": ["postcss-partial-import", "postcss-cssnext"],
+  "input": "./public/src/css/main.scss",
+  "output": "./public/dist/css/theme.css",
+  "autoprefixer": {
+    "browsers": "> 5%"
+  }
+}
